@@ -15,8 +15,13 @@ New Instances were launched in this order: 4 instances were spinned up usinf Red
 `sudo yum install nfs-utils -y`
 `sudo systemctl start nfs-server.service`
 `sudo systemctl enable nfs-server.service`
-`sudo systemctl status nfs-server.service` See the the status below. ![NFS Server Status](https://github.com/Lordchancellorr/project-7/blob/main/Images/NFS%20Status.PNG)
-I configured access to the NFS for clients within the same subnet(pasted the codes in the documentation saved and exited). After editing and adding new rules that fits in to the proper working status of NFS to the security groups,(See the image belwo to the see the changes effected to the default security group) ![Security group](https://github.com/Lordchancellorr/project-7/blob/main/Images/Security%20groups.PNG) i ran this command - `rpcinfo -p | grep nfs` and the image below was the output: ![NFS Port](https://github.com/Lordchancellorr/project-7/blob/main/Images/NFS%20Port.PNG)
+`sudo systemctl status nfs-server.service` See the the status below.
+
+ ![NFS Server Status](https://github.com/Lordchancellorr/project-7/blob/main/Images/NFS%20Status.PNG)
+ 
+I configured access to the NFS for clients within the same subnet(pasted the codes in the documentation saved and exited). After editing and adding new rules that fits in to the proper working status of NFS to the security groups,(See the image belwo to the see the changes effected to the default security group) ![Security group](https://github.com/Lordchancellorr/project-7/blob/main/Images/Security%20groups.PNG) i ran this command - `rpcinfo -p | grep nfs` and the image below was the output: 
+
+![NFS Port](https://github.com/Lordchancellorr/project-7/blob/main/Images/NFS%20Port.PNG)
 
 - STEP 2-3
 
@@ -25,11 +30,14 @@ I installed mysql and created a database. See the image below. ![mysql configura
 
 On the webservers created, I ran `sudo yum install nfs-utils nfs4-acl-tools -y` crreated a directory, mounted `/var/www` with `sudo mount -t nfs -o rw,nosuid <NFS-Server-Private-IP-Address>:/mnt/apps /var/www`(I edited and inserted the NFS Private IP). After installing apache and php in Remi's repository for the three servers, the images below were the output for php succesful installation and activeness- ![php-fpm for webserver1](https://github.com/Lordchancellorr/project-7/blob/main/Images/php-fpm%20status%20on%20webserver%201.PNG) ![php-fpm for webserver2](https://github.com/Lordchancellorr/project-7/blob/main/Images/php-fpm%20status%20on%20webserver%202.PNG) ![php-fpm for webserver3](https://github.com/Lordchancellorr/project-7/blob/main/Images/php-fpm%20status%20on%20webserver%203.PNG) See the msql database set uo below: ![Mysql database](https://github.com/Lordchancellorr/project-7/blob/main/Images/mysql%20setup%20on%20database.PNG)
 
-- I verified if  Apache files and directories were available on the Web Server in `/var/www` and also on the NFS server in `/mnt/apps`then I located the log folder for Apache on the Web Server and mounted it to NFS server’s export for logs. i forked the tooling source code gottten from [Darey.io Tooling](https://github.com/darey-io/tooling.git)... learn how i did it [here](https://youtu.be/f5grYMXbAV0) afer which git clloned the files...check the image below- ![Cloned Tooling](https://github.com/Lordchancellorr/project-7/blob/main/Images/tooling%20cloned%20from%20darey.PNG) ![Tooling](https://github.com/Lordchancellorr/project-7/blob/main/Images/tooling.PNG)
+- I verified if  Apache files and directories were available on the Web Server in `/var/www` and also on the NFS server in `/mnt/apps`then I located the log folder for Apache on the Web Server and mounted it to NFS server’s export for logs. i forked the tooling source code gottten from [Darey.io Tooling](https://github.com/darey-io/tooling.git)... learn how i did it [here](https://youtu.be/f5grYMXbAV0) afer which git clloned the files...check the image below- 
+![Cloned Tooling](https://github.com/Lordchancellorr/project-7/blob/main/Images/tooling%20cloned%20from%20darey.PNG) 
+![Tooling](https://github.com/Lordchancellorr/project-7/blob/main/Images/tooling.PNG)
 
 I also deplyed the  html folder from the repository  to /var/www/html and accessed the page using the webservers IP addresses and the images below were the outcome.
 
 ![Propitix login page](https://github.com/Lordchancellorr/project-7/blob/main/Images/Propopix%20login%20page.PNG)
+
 ![Propitix Website](https://github.com/Lordchancellorr/project-7/blob/main/Images/Propitix%20Tooling%20Website%20accessed.PNG)
 
 Thank You!
