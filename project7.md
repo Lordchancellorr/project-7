@@ -36,8 +36,8 @@ On the webservers created, I ran `sudo yum install nfs-utils nfs4-acl-tools -y` 
 
 I also deployed the  html folder from the repository  to /var/www/html and accessed the page using the webservers IP addresses and the images below were the outcome.
 
-![Propitix Login page](https://github.com/Lordchancellorr/project-7/blob/main/Images/Propitix%20login%20page.PNG)
+![Webserver1](https://github.com/Lordchancellorr/project-7/blob/main/Images/Webserver1.PNG)
 
-![Propitix Website](https://github.com/Lordchancellorr/project-7/blob/main/Images/Propitix%20Tooling%20Website%20accessed.PNG)
+![Webserver2](https://github.com/Lordchancellorr/project-7/blob/main/Images/Webserver2.PNG)
 
 Thank You!
